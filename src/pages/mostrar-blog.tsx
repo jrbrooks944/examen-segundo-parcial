@@ -1,38 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 const AppMostrar = () => {
-//   const [data, setData] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
 
 const [data, setData] = useState([]);
 const [loading, setLoading] = useState(false); // Cambiado a false porque no estamos cargando al inicio
 const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     fetch('/api/blog')
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error('Error al obtener los datos');
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         setData(data); 
-//         setLoading(false); 
-//       })
-//       .catch((error) => {
-//         setError(error.message);
-//         setLoading(false);
-//       });
-//   }, []);
-//   if (loading) {
-//     return <p>Cargando datos...</p>;
-//   }
-//   if (error) {
-//     return <p>Error: {error}</p>;
-//   }
-
 
   // Función para hacer el GET a la API cuando se haga clic en el botón
   const fetchData = () => {
@@ -90,61 +62,3 @@ const [error, setError] = useState(null);
 };
 
 export default AppMostrar;
-
-
-// import React, { useState } from 'react';
-
-// const AppMostrar = () => {
-//   const [data, setData] = useState([]);
-//   const [loading, setLoading] = useState(false); // Cambiado a false porque no estamos cargando al inicio
-//   const [error, setError] = useState(null);
-
-//   // Función para hacer el GET a la API cuando se haga clic en el botón
-//   const fetchData = () => {
-//     setLoading(true); // Iniciar la carga al hacer la solicitud
-//     setError(null);   // Resetear el error antes de hacer la solicitud
-//     fetch('/api/blog')  // Aquí se hace la solicitud a la API
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error('Error al obtener los datos');
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         setData(data); // Guardar la data en el estado
-//         setLoading(false); // Marcar que ya no está cargando
-//       })
-//       .catch((error) => {
-//         setError(error.message);
-//         setLoading(false);
-//       });
-//   };
-
-//   // Mostrar un mensaje de carga o error si es necesario
-//   if (loading) {
-//     return <p>Cargando datos...</p>;
-//   }
-//   if (error) {
-//     return <p>Error: {error}</p>;
-//   }
-
-//   return (
-//     <div>
-//       <h1>Posts del blog</h1>
-//       {/* Botón para consultar los datos */}
-//       <button onClick={fetchData}>Consultar</button>
-      
-//       {/* Mostrar los datos si ya están disponibles */}
-//       <ul>
-//         {data.map((post:any) => (
-//           <li key={post.id}>
-//             <h2>{post.title}</h2>
-//             <p>{post.content}</p>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default AppMostrar;
